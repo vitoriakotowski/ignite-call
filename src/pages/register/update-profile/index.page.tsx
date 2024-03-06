@@ -16,7 +16,7 @@ import { ArrowRight } from 'phosphor-react'
 import { useForm } from 'react-hook-form'
 import { z } from 'zod'
 import { api } from '../../../lib/axios'
-import { buildNextAuthOptions } from '../../api/auth/[...nextAuth].api'
+import { buildNextAuthOptions } from '../../api/auth/[...nextauth].api'
 import { Container, Header } from '../styles'
 import { FormAnnotation, ProfileBox } from './styles'
 
@@ -48,14 +48,14 @@ export default function UpdateProfile() {
 
   return (
     <>
-      <NextSeo title="Atualize seu perfil | Ignite Call" noindex />
+      <NextSeo title="Update your profile | Ignite Call" noindex />
 
       <Container>
         <Header>
-          <Heading as="strong">Bem-vindo ao Ignite Call!</Heading>
+          <Heading as="strong">Welcome to Ignite Call!</Heading>
           <Text>
-            Precisamos de algumas informações para criar seu perfil! Ah, você
-            pode editar essas informações depois.
+            We need some information to create your profile! Oh, you
+            can edit this information later.
           </Text>
 
           <MultiStep size={4} currentStep={4} />
@@ -63,7 +63,7 @@ export default function UpdateProfile() {
 
         <ProfileBox as="form" onSubmit={handleSubmit(handleUpdateProfile)}>
           <label>
-            <Text>Foto de perfil</Text>
+            <Text>Profile picture</Text>
             <Avatar
               src={session.data?.user.avatar_url}
               referrerPolicy="no-referrer"
@@ -72,15 +72,15 @@ export default function UpdateProfile() {
           </label>
 
           <label>
-            <Text size="sm">Sobre você</Text>
+            <Text size="sm">About you</Text>
             <TextArea {...register('bio')} />
             <FormAnnotation size="sm">
-              Fale um pouco sobre você. Isto será exibido em sua página pessoal.
+              Tell us a bit about yourself. This will be displayed on your personal page.
             </FormAnnotation>
           </label>
 
           <Button type="submit" disabled={isSubmitting}>
-            Finalizar
+            Finish
             <ArrowRight />
           </Button>
         </ProfileBox>

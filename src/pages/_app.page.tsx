@@ -19,7 +19,7 @@ export default function App({
         <DefaultSeo
           openGraph={{
             type: 'website',
-            locale: 'pt_BR',
+            locale: 'en_US',
             url: 'https://www.ignite-call.rocketseat.com.br',
             siteName: 'Ignite Call',
           }}

@@ -16,7 +16,7 @@ interface ScheduleProps {
 export default function Schedule({ user }: ScheduleProps) {
   return (
     <>
-      <NextSeo title={`Agendar com ${user.name} | Ignite Call`} />
+      <NextSeo title={`Schedule with ${user.name} | Ignite Call`} />
 
       <Container>
         <UserHeader>

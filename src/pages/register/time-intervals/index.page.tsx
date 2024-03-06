@@ -39,7 +39,7 @@ const timeIntervalsFormSchema = z.object({
     .length(7)
     .transform((intervals) => intervals.filter((interval) => interval.enabled))
     .refine((intervals) => intervals.length > 0, {
-      message: 'Você precisa selecionar pelo menos um dia da semana',
+      message: 'You need to select at least one day of the week.',
     })
     .transform((intervals) => {
       return intervals.map((interval) => {
@@ -59,7 +59,7 @@ const timeIntervalsFormSchema = z.object({
       },
       {
         message:
-          'O horário de término deve ser pelo menos 1h distante do início.',
+          'The end time must be at least 1 hour away from the start.',
       },
     ),
 })
@@ -112,14 +112,14 @@ export default function TimeIntervals() {
 
   return (
     <>
-      <NextSeo title="Selecione sua disponibilidade | Ignite Call" noindex />
+      <NextSeo title="Select your availability | Ignite Call" noindex />
 
       <Container>
         <Header>
-          <Heading as="strong">Quase lá</Heading>
+          <Heading as="strong">Almost there</Heading>
           <Text>
-            Defina o intervalo de horário que você está disponível em cada dia
-            da semana.
+            Set the time range when you are available each day
+            of the week.
           </Text>
 
           <MultiStep size={4} currentStep={3} />
@@ -173,7 +173,7 @@ export default function TimeIntervals() {
           )}
 
           <Button type="submit" disabled={isSubmitting}>
-            Próximo passo
+            Next step
             <ArrowRight />
           </Button>
         </IntervalBox>

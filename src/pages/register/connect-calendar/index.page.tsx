@@ -19,19 +19,19 @@ export default function ConnectCalendar() {
   }
 
   async function handleNavigateToNextStep() {
-    await router.push('/register/time-intervals')
+    await router.push('/register/connect-calendar')
   }
 
   return (
     <>
-      <NextSeo title="Conecte sua agenda do Google | Ignite Call" noindex />
+      <NextSeo title="Connect your Google Calendar | Ignite Call" noindex />
 
       <Container>
         <Header>
-          <Heading as="strong">Conecte sua agenda!</Heading>
+          <Heading as="strong">Connect your schedule!</Heading>
           <Text>
-            Conecte o seu calendário para verificar automaticamente as horas
-            ocupadas e os novos eventos à medida em que são agendados.
+            Connect your calendar to automatically check busy times and new
+            events as they are scheduled.
           </Text>
 
           <MultiStep size={4} currentStep={2} />
@@ -42,7 +42,7 @@ export default function ConnectCalendar() {
             <Text>Google Calendar</Text>
             {isSignedId ? (
               <Button size="sm" disabled>
-                Conectado
+                Connected
                 <Check />
               </Button>
             ) : (
@@ -51,7 +51,7 @@ export default function ConnectCalendar() {
                 size="sm"
                 onClick={handleConnectCalendar}
               >
-                Conectar
+                Connect
                 <ArrowRight />
               </Button>
             )}
@@ -59,8 +59,8 @@ export default function ConnectCalendar() {
 
           {hasAuthError && (
             <AuthError size="sm">
-              Falha ao se conectar ao Google, verifique se você habilitou as
-              permissões de acesso ao Google Calendar
+              Failed to connect to Google, please check if you have enabled
+              access permissions to Google Calendar
             </AuthError>
           )}
 
@@ -69,7 +69,7 @@ export default function ConnectCalendar() {
             type="submit"
             disabled={!isSignedId}
           >
-            Próximo passo
+            Next step
             <ArrowRight />
           </Button>
         </ConnectBox>

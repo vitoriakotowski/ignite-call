@@ -9,9 +9,9 @@ import { useRouter } from 'next/router'
 const ClaimUsernameFormSchema = z.object({
   username: z
     .string()
-    .min(3, { message: 'O usuário precisa ter pelo menos 3 letras.' })
+    .min(3, { message: 'The user must have at least 3 letters.' })
     .regex(/^([a-z\\-]+)$/i, {
-      message: 'O usuário pode ter apenas letras e hifens.',
+      message: 'The user can only have letters and hyphens.',
     })
     .transform((username) => username.toLowerCase()),
 })
@@ -41,11 +41,11 @@ export function ClaimUsernameForm() {
         <TextInput
           size="sm"
           prefix="ignite.com/"
-          placeholder="seu-usuário"
+          placeholder="Your-user"
           {...register('username')}
         />
         <Button size="sm" type="submit" disabled={isSubmitting}>
-          Reservar
+          Reserved
           <ArrowRight />
         </Button>
       </Form>
@@ -54,7 +54,7 @@ export function ClaimUsernameForm() {
         <Text size="sm">
           {errors.username
             ? errors.username.message
-            : 'Digite o nome do usuário desejado'}
+            : 'Enter the desired username.'}
         </Text>
       </FormAnnotation>
     </>
